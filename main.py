@@ -35,9 +35,8 @@ def create_bonus():
 CREATE_ENEMY = pygame.USEREVENT + 1
 pygame.time.set_timer(CREATE_ENEMY, 1500)
 
-CREATE_BONUS = pygame.USEREVENT + 1
+CREATE_BONUS = pygame.USEREVENT + 2
 pygame.time.set_timer(CREATE_BONUS, 2000)
-
 
 enemies = []
 bonuses = []
@@ -48,10 +47,8 @@ while is_working:
     for event in pygame.event.get():
         if event.type == QUIT:
             is_working = False
-
         if event.type == CREATE_ENEMY:
             enemies.append(create_enemy())
-
         if event.type == CREATE_BONUS:
             bonuses.append(create_bonus())
 
